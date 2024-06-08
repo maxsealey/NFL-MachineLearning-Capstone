@@ -113,9 +113,23 @@ percent_to_decimal()
 Args: percentage
 Ret: percentage in decimal form
 
+Converts a percentage to decimal form
+"""
+
+
+def percent_to_decimal(percent):
+    return float(percent) / 100
+
+
+"""
+decimal_to_percent()
+
+Args: percentage
+Ret: percentage in decimal form
+
 Converts a percentage string to decimal form
 """
 
 
-def percent_to_decimal(percent_str):
-    return float(percent_str) / 100
+def decimal_to_percent(dec):
+    return str(round(dec * 100, 2))
