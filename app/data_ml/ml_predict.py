@@ -27,7 +27,7 @@ based on salary cap data (classification: playoffs or not)
 Prints accuracy score and classification report to the console, 
 displays confusion matrix showing actual vs predicted results on test data
 """
-def make_prediction():
+def create_ml_model():
     # Passes in sql script into utility function get_df_with_cleaned_data() to retrieve
     # dataframe with only the data needed to make a prediction
     df = util.get_df_with_cleaned_data(retrieve_prediction_data_script())
@@ -76,4 +76,4 @@ def make_prediction():
     plt.show()
 
 
-make_prediction()
+create_ml_model()
