@@ -141,3 +141,31 @@ def div_year_stacked_bar_chart_script(teams, year):
       FROM nfl_data
       WHERE (team = "{teams[0]}" OR team = "{teams[1]}" OR team = "{teams[2]}" OR team = "{teams[3]}") AND season = {year};
     '''
+
+# LINE BREAK FOR READABILITY
+
+
+"""
+
+"""
+def division_off_def_trends_linegraph_script(teams, side_of_ball_p):
+
+    return f'''
+    DROP TABLE IF EXISTS relevant_data;
+
+      CREATE TABLE relevant_data (
+        team VARCHAR(25),
+        season INT,
+        {side_of_ball_p} NUMERIC(2, 8)
+      );
+      
+        INSERT INTO relevant_data (
+        team,
+        season,
+        {side_of_ball_p}
+      )
+      SELECT team, season, {side_of_ball_p}
+      FROM nfl_data
+      WHERE team = "{teams[0]}" OR team = "{teams[1]}" OR team = "{teams[2]}" OR team = "{teams[3]}"
+      ORDER BY season;
+    '''

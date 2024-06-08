@@ -16,6 +16,8 @@ Ret: Dataframe with data
 
 Called in visualize_data.py and ml_predict
 """
+
+
 def get_df_with_cleaned_data(script):
     # loads data to pandas dataframe
     csv = '../../data/nfl_data.csv'
@@ -45,8 +47,10 @@ Ret: Statement (string)
 
 Called in visualize_data.py
 """
+
+
 def sb_or_playoffs(team, year, playoffs_bool, sb_bool):
-    won_sb = f'The {team} { "won" if sb_bool else "did not win"} the Super Bowl in {year}.'
+    won_sb = f'The {team} {"won" if sb_bool else "did not win"} the Super Bowl in {year}.'
     lost_in_playoffs = f'The {team} lost at some point in the playoffs in {year}.'
     did_not_make_playoffs = f'The {team} did not make the playoffs in {year}.'
 
@@ -66,6 +70,8 @@ Ret: List of easily readable position names
 
 Called in visualize_data.py
 """
+
+
 def position_labels():
     return ['QB', 'RB', 'WR', 'TE', 'OL', 'IDL', 'EDGE', 'LB', 'S', 'CB']
 
@@ -78,6 +84,8 @@ Ret: list of four team names (strings)
 
 Called in visualize_data.py
 """
+
+
 def get_teams_in_division(division):
     if division == "NFC North":
         return ["Bears", "Packers", "Lions", "Vikings"]
@@ -107,5 +115,7 @@ Ret: percentage in decimal form
 
 Converts a percentage string to decimal form
 """
+
+
 def percent_to_decimal(percent_str):
     return float(percent_str) / 100
