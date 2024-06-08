@@ -2,7 +2,7 @@
 sql_scripts.py
 Author: Max Sealey
 
-Every function returns a sql script (string)
+Every function returns a sql script (string) with cleaned data
 """
 
 # LINE BREAK FOR READABILITY
@@ -51,8 +51,8 @@ Args: N/A
 Ret: script (string)
 Used to get dataframe with information used to calculate likelihood of making playoffs
 """
-def team_year_pie_chart_script():
-    return '''
+def team_year_pie_chart_script(team, year):
+    return f'''
       DROP TABLE IF EXISTS relevant_data;
 
       CREATE TABLE relevant_data (
@@ -90,5 +90,54 @@ def team_year_pie_chart_script():
       )
       SELECT team, season, playoffs, sb, qb_p, rb_p, wr_p, te_p, ol_p, idl_p, edge_p, lb_p, s_p, cb_p
       FROM nfl_data
-      ORDER BY team;
+      WHERE team = "{team}" AND season = {year};
+    '''
+
+# LINE BREAK FOR READABILITY
+
+
+"""
+div_year_stacked_bar_chart_script()
+
+Args: list of four teams
+Ret: script (string)
+Used to get dataframe of data for four teams (in a division) used to 
+make the stacked bar_chart visual
+"""
+def div_year_stacked_bar_chart_script(teams, year):
+    return f'''
+    DROP TABLE IF EXISTS relevant_data;
+    
+      CREATE TABLE relevant_data (
+        team VARCHAR(25),
+        season INT,
+        qb_p NUMERIC(2, 8),
+        rb_p NUMERIC(2, 8),
+        wr_p NUMERIC(2, 8),
+        te_p NUMERIC(2, 8),
+        ol_p NUMERIC(2, 8),
+        idl_p NUMERIC(2, 8),
+        edge_p NUMERIC(2, 8),
+        lb_p NUMERIC(2, 8),
+        s_p NUMERIC(2, 8),
+        cb_p NUMERIC(2, 8)
+      );
+
+        INSERT INTO relevant_data (
+        team,
+        season,
+        qb_p,
+        rb_p,
+        wr_p,
+        te_p,
+        ol_p,
+        idl_p,
+        edge_p,
+        lb_p,
+        s_p,
+        cb_p
+      )
+      SELECT team, season, qb_p, rb_p, wr_p, te_p, ol_p, idl_p, edge_p, lb_p, s_p, cb_p
+      FROM nfl_data
+      WHERE (team = "{teams[0]}" OR team = "{teams[1]}" OR team = "{teams[2]}" OR team = "{teams[3]}") AND season = {year};
     '''

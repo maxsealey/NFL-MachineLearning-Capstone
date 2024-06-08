@@ -69,3 +69,43 @@ Called in visualize_data.py
 def position_labels():
     return ['QB', 'RB', 'WR', 'TE', 'OL', 'IDL', 'EDGE', 'LB', 'S', 'CB']
 
+
+"""
+get_teams_in_division()
+
+Args: division name (string)
+Ret: list of four team names (strings)
+
+Called in visualize_data.py
+"""
+def get_teams_in_division(division):
+    if division == "NFC North":
+        return ["Bears", "Packers", "Lions", "Vikings"]
+    elif division == "NFC East":
+        return ["Eagles", "Cowboys", "Commanders", "Giants"]
+    elif division == "NFC South":
+        return ["Buccaneers", "Saints", "Falcons", "Panthers"]
+    elif division == "NFC West":
+        return ["Seahawks", "49ers", "Rams", "Cardinals"]
+    elif division == "AFC North":
+        return ["Bengals", "Steelers", "Browns", "Ravens"]
+    elif division == "AFC East":
+        return ["Patriots", "Dolphins", "Jets", "Bills"]
+    elif division == "AFC South":
+        return ["Texans", "Jaguars", "Titans", "Colts"]
+    elif division == "AFC West":
+        return ["Chiefs", "Chargers", "Raiders", "Broncos"]
+    else:
+        return "error"
+
+
+"""
+percent_to_decimal()
+
+Args: percentage
+Ret: percentage in decimal form
+
+Converts a percentage string to decimal form
+"""
+def percent_to_decimal(percent_str):
+    return float(percent_str) / 100

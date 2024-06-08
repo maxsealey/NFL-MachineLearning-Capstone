@@ -16,7 +16,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 from sklearn.preprocessing import StandardScaler
 
 """
-make_prediction()
+create_model()
 
 Args: N/A
 Ret: N/A
@@ -27,7 +27,7 @@ based on salary cap data (classification: playoffs or not)
 Prints accuracy score and classification report to the console, 
 displays confusion matrix showing actual vs predicted results on test data
 """
-def create_ml_model():
+def create_model():
     # Passes in sql script into utility function get_df_with_cleaned_data() to retrieve
     # dataframe with only the data needed to make a prediction
     df = util.get_df_with_cleaned_data(retrieve_prediction_data_script())
@@ -76,4 +76,17 @@ def create_ml_model():
     plt.show()
 
 
-create_ml_model()
+"""
+make_prediction()
+
+Args: % of cap for QB, % of cap for offense, % of cap for defense
+Ret: N/A
+
+Applies user inputs to ML model created in create_model()
+"""
+
+def make_prediction(qb_p, off_p, def_p):
+    print(f'{qb_p} {off_p} {def_p}')
+
+
+create_model()
