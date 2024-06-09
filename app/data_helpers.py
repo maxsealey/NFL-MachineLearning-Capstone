@@ -20,7 +20,7 @@ Called in visualize_data.py and ml_predict
 
 def get_df_with_cleaned_data(script):
     # loads data to pandas dataframe
-    csv = '../../data/nfl_data.csv'
+    csv = '../data/nfl_data.csv'
     df = pd.read_csv(csv)
 
     # connect to database

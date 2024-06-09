@@ -93,11 +93,10 @@ Ret: N/A
 Applies user inputs to ML model created in create_model()
 """
 
-def make_prediction(qb_p, off_p, def_p):
-    # call create_model and retrieve data
-    model_dict = create_model()
-    rfc_model = model_dict['model']
-    accuracy = model_dict['acc_score']
+def make_prediction(model, qb_p, off_p, def_p):
+    # retrieve data
+    rfc_model = model['model']
+    accuracy = model['acc_score']
 
     # allows user inputs to be whole percentage (47%, eg.)
     # converts to decimal usable in the model
@@ -117,6 +116,3 @@ def make_prediction(qb_p, off_p, def_p):
 
     print(prediction_text)
     return prediction_text
-
-
-make_prediction(12, 35, 56)
