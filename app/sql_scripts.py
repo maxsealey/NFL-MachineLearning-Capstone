@@ -139,7 +139,8 @@ def div_year_stacked_bar_chart_script(teams, year):
       )
       SELECT team, season, qb_p, rb_p, wr_p, te_p, ol_p, idl_p, edge_p, lb_p, s_p, cb_p
       FROM nfl_data
-      WHERE (team = "{teams[0]}" OR team = "{teams[1]}" OR team = "{teams[2]}" OR team = "{teams[3]}") AND season = {year};
+      WHERE team IN ("{teams[0]}", "{teams[1]}", "{teams[2]}", "{teams[3]}")
+      AND season = {year};
     '''
 
 # LINE BREAK FOR READABILITY

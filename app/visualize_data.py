@@ -73,13 +73,13 @@ def division_breakdown_stacked_bar(division, year):
     pos_data.plot(kind='bar', stacked=True, figsize=(12, 8), colormap='Paired')
 
     # set title and labels
-    plt.title(f'Salaries by Position for {division} Teams in {year}')
+    plt.title(f'Salaries by Position for {division} Teams in {str(year)}')
     plt.xlabel('Teams')
     plt.ylabel('Salary Allocation Percentage')
     plt.legend(util.position_labels(), title='Positions', bbox_to_anchor=(1, 1))
 
     # bottom description
-    description = f'Salary breakdown for {division} teams in the {year} season.'
+    description = f'Salary breakdown for {division} teams in the {str(year)} season.'
     plt.figtext(0.5, -0.1, description, ha='center', fontsize=10,
                 bbox={"facecolor": "orange", "alpha": 0.5, "pad": 5})
 
@@ -100,21 +100,22 @@ Ret: N/A
 
 def division_offense_defense_trends_line_graph(division, side_of_ball):
     # clean and format the data
+    sob_formatted = "offense_p" if side_of_ball == "Offense" else "defense_p"
     teams = util.get_teams_in_division(division)
-    script = division_off_def_trends_linegraph_script(teams, side_of_ball)
+    script = division_off_def_trends_linegraph_script(teams, sob_formatted)
     df = util.get_df_with_cleaned_data(script)
-    sob_formatted = "OFFENSIVE" if side_of_ball == "offense_p" else "DEFENSIVE"
+    sob_reformatted = "OFFENSE" if sob_formatted == "offense_p" else "DEFENSE"
 
     # plot line graph by iterating through teams in division
     plt.figure(figsize=(10, 6))
     for i in teams:
         team_data = df[df['team'] == i]
-        plt.plot(team_data['season'], team_data[side_of_ball], label=i)
+        plt.plot(team_data['season'], team_data[sob_formatted], label=i)
 
     # label graph and display
     plt.xlabel('Season')
-    plt.ylabel(f'% of Cap Spent on the {sob_formatted} Side of the Ball')
-    plt.title(f'{division} Division {sob_formatted} Spending Trends (2013-2022)')
+    plt.ylabel(f'% of Cap Spent on the {sob_reformatted}')
+    plt.title(f'{division} Division {sob_reformatted} Spending Trends (2013-2022)')
     plt.xticks(np.arange(2013, 2023, step=1))
     plt.legend()
     plt.grid(True)
@@ -124,4 +125,4 @@ def division_offense_defense_trends_line_graph(division, side_of_ball):
 # for testing functions
 # team_salary_breakdown_pie_chart("Cardinals", 2022)
 # division_breakdown_stacked_bar("AFC East", 2016)
-division_offense_defense_trends_line_graph("AFC West", "offense_p")
+# division_offense_defense_trends_line_graph("AFC West", "offense_p")

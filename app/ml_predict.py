@@ -29,6 +29,8 @@ displays confusion matrix showing actual vs predicted results on test data
 
 Called in make_prediction(), which is defined right below
 """
+
+
 def create_model():
     # Passes in sql script into utility function get_df_with_cleaned_data() to retrieve
     # dataframe with only the data needed to make a prediction
@@ -59,6 +61,20 @@ def create_model():
     conf_matrix = confusion_matrix(y_test, y_pred)
     class_report = classification_report(y_test, y_pred)
 
+    input(
+                '''
+A Random Forest Classifier model has been fit to the training data
+and has made predictions on the test data.
+
+Type anything and click 'enter' to view accuracy score, 
+classification report, and a confusion matrix that displays the 
+predicted outcomes vs actual outcomes.
+
+'''
+
+    )
+
+
     # displays accuracy score and classification report
     print(f'Accuracy: {accuracy:.2f}\n')
     print('Classification Report:\n', class_report)
@@ -67,7 +83,9 @@ def create_model():
     print("")
     print("Actual vs Predicted Outcomes:")
     print(results_df.head(10))
-    print("")
+    print("--------------------------------------------------------------------")
+    print("\nTO CONTINUE TO THE MAIN MENU: CLOSE CONFUSION MATRIX, \n"
+          "THEN TYPE ANYTHING AND CLICK 'ENTER'\n")
 
     # confusion matrix visualization
     sns.heatmap(conf_matrix, annot=True, cmap='Blues', fmt='d', xticklabels=['No Playoffs', 'Playoffs'],
@@ -76,6 +94,8 @@ def create_model():
     plt.ylabel('Actual Outcomes')
     plt.title('NFL Playoff Predictor Confusion Matrix')
     plt.show()
+
+    input("Please type anything and click 'enter': \n")
 
     # returns dictionary with things needed to make prediction with user input
     return {
@@ -92,6 +112,7 @@ Ret: N/A
 
 Applies user inputs to ML model created in create_model()
 """
+
 
 def make_prediction(model, qb_p, off_p, def_p):
     # retrieve data
@@ -110,9 +131,21 @@ def make_prediction(model, qb_p, off_p, def_p):
     # makes classification prediction (first element contains 1 or 0) with converted data
     prediction = rfc_model.predict([[qb_p_dec, off_p_dec, def_p_dec]])
     if prediction[0] == 1:
-        prediction_text = f'The model predicts that the team will make the playoffs. This is {acc_per}% likely to be true.\n'
+        prediction_text = f'''
+    The model predicts that the team will make the playoffs. 
+    This is {acc_per}% likely to be true.
+    
+    Based on this projection, we recommend giving them prime time games
+    and use this as leverage when negotiating with streaming services.
+    
+            '''
     else:
-        prediction_text = f'The model predicts that the team will not make the playoffs. This is {acc_per}% likely to be true.\n'
-
+        prediction_text = f'''
+    The model predicts that the team will not make the playoffs. 
+    This is {acc_per}% likely to be true.\n
+    
+    Based on this projection, we recommend burying this team's games in 
+    midday Sunday slots, keeping them off the air more than projected playoff teams.
+    
+                    '''
     print(prediction_text)
-    return prediction_text
