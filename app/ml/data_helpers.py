@@ -20,11 +20,11 @@ Called in visualize_data.py and ml_predict
 
 def get_df_with_cleaned_data(script):
     # loads data to pandas dataframe
-    csv = '../data/nfl_data.csv'
+    csv = '../../data/nfl_data.csv'
     df = pd.read_csv(csv)
 
     # connect to database
-    conn = sql.connect('nfl_data.db')
+    conn = sql.connect('../../data/nfl_data.db')
     cursor = conn.cursor()
     df.to_sql('nfl_data', conn, if_exists='replace', index=False)
     conn.commit()
