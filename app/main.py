@@ -9,7 +9,7 @@ import dash_functions as dash
 from app import ml_predict as ml, visualize_data as vd
 
 
-while True:  # runs until user quits (or program breaks, which shouldn't happen)
+while True:  # runs until user quits (or program breaks, which shouldn't ever happen)
 
     dash.welcome_message()
 
@@ -25,7 +25,7 @@ while True:  # runs until user quits (or program breaks, which shouldn't happen)
         elif option == str(1):  # prediction option
             while True:
                 try:
-                    user_input = dash.get_prediction_input()
+                    user_input = dash.get_prediction_input()  # get user input and make prediction
                     ml.make_prediction(model, user_input[0], user_input[1], user_input[2])
                     break
                 except RuntimeWarning:
@@ -46,7 +46,7 @@ while True:  # runs until user quits (or program breaks, which shouldn't happen)
         elif option == str(2):  # pie chart option
             while True:
                 try:
-                    user_input = dash.get_pie_chart_input()
+                    user_input = dash.get_pie_chart_input()  # get user input and create pie chart with the information
                     vd.team_salary_breakdown_pie_chart(user_input[0], user_input[1])
                     break
                 except RuntimeWarning:
@@ -67,7 +67,7 @@ while True:  # runs until user quits (or program breaks, which shouldn't happen)
         elif option == str(3):  # bar chart option
             while True:
                 try:
-                    user_input = dash.get_bar_chart_input()
+                    user_input = dash.get_bar_chart_input()  # get user input and create bar graph with the information
                     vd.division_breakdown_stacked_bar(user_input[0], user_input[1])
                     break
                 except RuntimeWarning:
@@ -88,7 +88,7 @@ while True:  # runs until user quits (or program breaks, which shouldn't happen)
         elif option == str(4):  # line graph option
             while True:
                 try:
-                    user_input = dash.get_line_graph_input()
+                    user_input = dash.get_line_graph_input()  # get user input and create line graph with the information
                     vd.division_offense_defense_trends_line_graph(user_input[0], user_input[1])
                     break
                 except RuntimeWarning:
