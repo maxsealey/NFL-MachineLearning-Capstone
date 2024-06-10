@@ -8,8 +8,10 @@ to make a prediction on the playoff likelihood of teams based on salary cap data
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import data_helpers as util
-from sql_scripts import retrieve_prediction_data_script
+
+from app.ml.data_helpers import get_df_with_cleaned_data  # use these imports instead of the above when running this file directly
+from app.ml.sql_scripts import retrieve_prediction_data_script
+
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -33,7 +35,7 @@ Called in make_prediction(), which is defined right below
 def create_model():
     # Passes in sql script into utility function get_df_with_cleaned_data() to retrieve
     # dataframe with only the data needed to make a prediction
-    df = util.get_df_with_cleaned_data(retrieve_prediction_data_script())
+    df = get_df_with_cleaned_data(retrieve_prediction_data_script())
 
     # features are % of cap allocated to qb, offense (as a whole), and defense (as a whole)
     features = ['qb_p', 'off_p', 'def_p']
@@ -58,7 +60,7 @@ def create_model():
     # compares predictions vs test results
     accuracy = accuracy_score(y_test, y_pred)
     conf_matrix = confusion_matrix(y_test, y_pred)
-    class_report = classification_report(y_test, y_pred)
+    class_report = classification_report(y_test, y_pred, zero_division='warn')
 
     input(
         '''
