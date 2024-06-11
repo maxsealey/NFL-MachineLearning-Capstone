@@ -54,6 +54,7 @@ def make_prediction(model, qb_p, off_p, def_p):
 
                     '''
     print(prediction_text)
+    return prediction_text
 
 
 make_prediction(ml.create_model(), 20, 40, 20)

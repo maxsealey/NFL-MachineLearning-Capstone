@@ -9,18 +9,50 @@
     {% else %}
       <title>Machine Learning Capstone Project</title>
     {% endif %}
-    <link rel="stylesheet" href="../static/scss/style.scss">
+    <link rel="stylesheet" href="../static/scss/style.css">
   </head>
+
   <body>
     <main>
-        <h1>Welcome</h1>
+      <h1 class="main_header">NFL Playoff Predictor</h1>
+      <h4 class="description">Desc</h4>
     </main>
+    <div class="instructions">
+      <h5 style="white-space: pre-line">
+      For this to work properly, please follow these input rules:
 
-    {% for i in test_data %}
-      <h3>{{ i.first }}</h3>
-      <h3>{{ i.last }}</h3>
-    {% endfor %}
+       1. The % of the salary cap dedicated to the offense and defense must
+          end up being less than or equal to 100%.
+       2. The % of the salary cap dedicated to the quarterback must be less
+          than what was dedicated to
+       3. All inputs must be number between 0.01 and 100.00 (inclusive).
+      </h5>
+    </div>
+    <form action="/predict" method="post" class="prediction_form">
+        <label for="qb_percentage">Percentage of Salary Cap Allocated to the QB Position:</label>
+        <input type="text" id="qb_percentage" name="qb_percentage"><br><br>
 
+        <label for="offense_percentage">Percentage of Salary Cap Allocated to the Offense: </label>
+        <input type="text" id="offense_percentage" name="offense_percentage"><br><br>
+
+        <label for="defense_percentage">Percentage of Salary Cap Allocated to the Defense: </label>
+        <input type="text" id="defense_percentage" name="defense_percentage"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+      <h2 class="result_text_title">Prediction Result:</h2>
+      <p class="result_text">The predicted outcome is: {{ prediction }}</p>
+    {% endif %}
+
+    <p class="disclaimer" style="white-space: pre-line">
+      This application is a CS Capstone project. The goal was to create a machine learning model
+      and train it to make prediction, then write a report. While this model has shown better than
+      expected results, there are far too many variables that have not been taken into account (yet)
+      to make an accurate prediction. If you are interested in the technical aspects of this project,
+      please check out my git repo at https://github.com/maxsealey/NFLWinPredictor_WGUCapstone.
+    </p>
 	<script src="../static/js/script.js"></script>
   </body>
 </html>
