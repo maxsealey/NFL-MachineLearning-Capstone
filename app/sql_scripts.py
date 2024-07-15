@@ -147,12 +147,7 @@ def div_year_stacked_bar_chart_script(teams, year):
 
 
 """
-division_off_def_trends_linegraph_script()
 
-Args: list of four teams, side of the ball (string)
-Ret: script (string)
-Used to get dataframe of data for four teams (in a division) used to 
-make the stacked bar_chart visual
 """
 def division_off_def_trends_linegraph_script(teams, side_of_ball_p):
 
