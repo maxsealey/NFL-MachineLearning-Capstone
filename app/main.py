@@ -5,9 +5,10 @@ Author: Max Sealey
 NOTE FOR EVALUATORS: User interaction will be done
 through the CLI. Please run the program on this script.
 """
-import dash_functions as dash
-from app import ml_predict as ml, visualize_data as vd
 
+import dash_functions as dash
+import ml_predict as ml
+import visualize_data as vd
 
 while True:  # runs until user quits (or program breaks, which shouldn't ever happen)
 
