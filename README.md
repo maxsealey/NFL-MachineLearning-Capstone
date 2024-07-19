@@ -1,4 +1,5 @@
 <div style="background:#14213d;color: #fff; padding: 20pt;text-shadow: 2px 5px 5px black;letter-spacing:.1em;width:100%;height:100%; font-family:'Futura';">
+    
 <div style="text-align:center;color: #fff;-webkit-text-stroke: 1px black;background:#14213d;"> 
 
 
@@ -211,16 +212,6 @@ View the classification report, accuracy score, and confusion matrix.
 </div>
 
 <h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">
-View the classification report, accuracy score, and confusion matrix.
-</h5>
-
-<div style="max-width:600px;">
-
-![main menu](./readme-assets/cli/model_created_test_results.png)
-
-</div>
-
-<h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">
 Classification Report & Accuracy Score
 </h5>
 
@@ -267,8 +258,15 @@ Option 2: Pie Chart Visualization
 <div style="max-width:600px;">
 
 ![main menu](./readme-assets/cli/2.png)
+
+</div>
+
 <h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">Pie Chart Example</h5>
+
+<div style="max-width:600px;">
+
 ![main menu](./readme-assets/cli/option2_pie_chart.png)
+
 </div>
 
 <h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">
@@ -277,9 +275,16 @@ Option 3: Bar Chart Visualization
 
 <div style="max-width:600px;">
 
-![main menu](./readme-assets/cli/3.png)
+![3](./readme-assets/cli/3.png)
+
+</div>
+
 <h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">Bar Chart Example</h5>
-![main menu](./readme-assets/cli/option3_barchart.png)
+
+<div style="max-width:600px;">
+
+![bar](./readme-assets/cli/option3_barchart.png)
+
 </div>
 
 <h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">
@@ -288,9 +293,16 @@ Option 4: Line Graph Visualization
 
 <div style="max-width:600px;">
 
-![main menu](./readme-assets/cli/4.png)
+![4](./readme-assets/cli/4.png)
+
+</div>
+
 <h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">Line Graph Example</h5>
-![main menu](./readme-assets/cli/4_linegraph.png)
+
+<div style="max-width:600px;">
+
+![line](./readme-assets/cli/4_linegraph.png)
+
 </div>
 
 <br>
