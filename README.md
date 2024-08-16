@@ -195,9 +195,9 @@ These instructions assumes that git is installed on your computer and you have a
 Welcome, and thank you for using my program.
 </h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![main menu](./readme-assets/cli/welcome_message.png)
+<img src="./readme-assets/cli/welcome_message.png" width="550px">
 
 </div>
 
@@ -205,9 +205,9 @@ Welcome, and thank you for using my program.
 View the classification report, accuracy score, and confusion matrix.
 </h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![main menu](./readme-assets/cli/model_created_test_results.png)
+<img src="./readme-assets/cli/model_created_test_results.png" width="550px">
 
 </div>
 
@@ -215,9 +215,9 @@ View the classification report, accuracy score, and confusion matrix.
 Classification Report & Accuracy Score
 </h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![main menu](./readme-assets/cli/class_report.png)
+<img src="./readme-assets/cli/class_report.png" width="550px">
 
 </div>
 
@@ -225,9 +225,9 @@ Classification Report & Accuracy Score
 Confusion Matrix
 </h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![main menu](./readme-assets/cli/confusion_matrix.png)
+<img src="./readme-assets/cli/confusion_matrix.png" width="550px">
 
 </div>
 
@@ -235,9 +235,9 @@ Confusion Matrix
 Displays the Main Menu for User Interaction
 </h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![main menu](./readme-assets/cli/main_menu.png)
+<img src="./readme-assets/cli/main_menu.png" width="550px">
 
 </div>
 
@@ -245,9 +245,9 @@ Displays the Main Menu for User Interaction
 Option 1: Make a prediction
 </h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![main menu](./readme-assets/cli/1.png)
+<img src="./readme-assets/cli/1.png" width="550px">
 
 </div>
 
@@ -255,17 +255,17 @@ Option 1: Make a prediction
 Option 2: Pie Chart Visualization
 </h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![main menu](./readme-assets/cli/2.png)
+<img src="./readme-assets/cli/2.png" width="550px">
 
 </div>
 
 <h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">Pie Chart Example</h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![main menu](./readme-assets/cli/option2_pie_chart.png)
+<img src="./readme-assets/cli/option2_pie_chart.png" width="550px">
 
 </div>
 
@@ -273,17 +273,17 @@ Option 2: Pie Chart Visualization
 Option 3: Bar Chart Visualization
 </h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![3](./readme-assets/cli/3.png)
+<img src="./readme-assets/cli/3.png" width="550px">
 
 </div>
 
 <h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">Bar Chart Example</h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![bar](./readme-assets/cli/option3_barchart.png)
+<img src="./readme-assets/cli/option3_barchart.png" width="550px">
 
 </div>
 
@@ -291,17 +291,17 @@ Option 3: Bar Chart Visualization
 Option 4: Line Graph Visualization
 </h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![4](./readme-assets/cli/4.png)
+<img src="./readme-assets/cli/4.png" width="550px">
 
 </div>
 
 <h5 style="text-shadow: none;-webkit-text-stroke: 0px black;">Line Graph Example</h5>
 
-<div style="max-width:600px;">
+<div align="center">
 
-![line](./readme-assets/cli/4_linegraph.png)
+<img src="./readme-assets/cli/4_linegraph.png" width="550px">
 
 </div>
 
