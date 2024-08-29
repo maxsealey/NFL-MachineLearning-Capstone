@@ -7,10 +7,18 @@
 ## Senior Capstone Project by Max Sealey
 ### (B.S. in Computer Science conferred 06/26/24)
 
-<br>
+<br/>
+
+--------
+
+### Project update August 2024:
+#### - Overhauling project by changing both the overarching goal of the program, and the data used to train the ML model
+#### - Developing a Flask app to be hosted online for demo
+#### 
+
+--------
 
 </div>
-
 
 ## Table of Contents
 
